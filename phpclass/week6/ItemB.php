@@ -40,7 +40,8 @@ and open the template in the editor.
 */
         
         // put your code here
-        
+        print_r($_POST);
+        echo count($_POST);
         
         ?>
 <form action="#" method="post">

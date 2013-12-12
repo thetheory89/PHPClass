@@ -36,6 +36,18 @@ and open the template in the editor.
 */
        
         // put your code here
+        // print_r($_POST);
+        
+       if( array_key_exists('signup',$_POST) )
+          {
+           echo 'You in the Signup Form';
+           print_r($_POST);
+          }
+      else if ( array_key_exists('login', $_POST) )
+              {
+               echo 'You in the Login Form';
+               print_r($_POST);
+              }
         ?>
 <h1>Signup</h1>
 <form action="#" method="post">

@@ -27,6 +27,27 @@ and open the template in the editor.
 * 3. Take the validated data and insert into the database with bindparam
 * before excuting
 */
+        
+        if(isset($_POST["address"],$_POST["city"],$_POST["state"],$_POST["zip"],$_POST["name"] ))
+                {
+            $db = new PDO("mysql:host=localhost;port=3306;dbname=phplab","root","");
+                
+          if ( null != $db ) {
+         $stmt = $db->prepare('insert into addressbook set address = :AddressValue, '
+                    . 'city = :CityValue, state = :StateValue, zip = :ZipValue, name = :NameValue');
+            $stmt->bindParam(':AddressValue', $_POST["address"], PDO::PARAM_STR);
+            $stmt->bindParam(':CityValue', $_POST["city"], PDO::PARAM_STR);
+            $stmt->bindParam(':StateValue', $_POST["state"], PDO::PARAM_STR);
+            $stmt->bindParam(':ZipValue', $_POST["zip"], PDO::PARAM_STR);
+            $stmt->bindParam(':NameValue', $_POST["name"], PDO::PARAM_STR);
+            if ( $stmt->execute() ){
+                echo '<p>data submited</p>';
+            }
+          }
+        }
+        
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+        
         ?>
 </body>
 </html>

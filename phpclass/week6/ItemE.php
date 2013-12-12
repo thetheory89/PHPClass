@@ -35,7 +35,17 @@ and open the template in the editor.
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        
+        foreach ($result as $value)
+            {
+                echo '<table border = "1">';
+                echo '<tr>';
+                echo '<td>', $value['address'], '</td>';
+                echo '<td>', $value['city'], '</td>';
+                echo '<td>', $value['state'], '</td>';
+                echo '<td>', $value['zip'], '</td>';
+                echo '<td>', $value['name'], '</td>';
+                echo '</tr>';
+            }
         // put your code here
         ?>
 </body>

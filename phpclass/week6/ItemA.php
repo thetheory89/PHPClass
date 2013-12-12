@@ -48,11 +48,16 @@ The link on the page is linked to the same page using a pound sign/hash tag
 
 */
         print_r($_GET);
-        if(count($_GET)){
+        echo count($_GET);
+        if(count($_GET)> 0){
+            foreach ($_GET as $key => $value)
+                {
+                echo $key, '=',$value,'<br />';
+                }
             
         }
         
         ?>
-<a href="#?page=demo&name=gabriel">Click me</a>
+<a href="?page=demo&name=gabriel&city=cumberland&state=rhodeisland">Click me</a>
 </body>
 </html>

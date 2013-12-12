@@ -33,6 +33,22 @@ and open the template in the editor.
 */
         
         // put your code here
+        
+        $_SESSION['auth'] = false;
+        
+        if(isset($_POST['passcode']) && $_POST['passcode'] == 'demo')
+            {
+            $_SESSION['auth'] = true;
+            }   
+            if($_SESSION['auth'] == true)
+                {
+                header('Location:itemD.php');
+                }
+                else
+                    {
+                    echo 'Wrong Password';
+                    }
+        
         ?>
 <form action="#" method="post">
 Passcode <input type="password" name="passcode" value="" />
