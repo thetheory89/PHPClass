@@ -39,7 +39,17 @@ class Guestbook {
     }
     
     public function processGuesbook(){
-        //check post data
-        // put into Dababase
+        $db= $this->getDB();
+        
+                if ( null != $db ) {
+            $stmt = $db->prepare('insert into guestbook set name = :nameValue, '
+                    . 'email = :emailValue, comments = :commentsValue');
+            $stmt->bindParam(':nameValue', $_POST["name"], PDO::PARAM_STR);
+            $stmt->bindParam(':emailValue', $_POST["email"], PDO::PARAM_STR);
+            $stmt->bindParam(':commentsValue', $_POST["comments"], PDO::PARAM_STR);
+            if ( $stmt->execute() ){
+                return true;
+            }
+        } 
     }
 }

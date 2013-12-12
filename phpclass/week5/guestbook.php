@@ -21,6 +21,13 @@ and open the template in the editor.
         $gb->displayGuestbook();
         
         ?>
-        
+         <h1> Guest Book </h1>
+        <form name="mainform" method="post" action="#">
+            <label>Name</label> <input type="text" name="name" value="" /> <br /><br />
+            <label>Email</label> <input type="text" name="email" value="" /> <br /><br />
+            <label>Comments</label> <textarea name="comments"></textarea>
+            <br />
+            <input type="submit" value="Submit" />
+        </form>
     </body>
 </html>
