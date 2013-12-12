@@ -31,8 +31,25 @@ and open the template in the editor.
         $func = function($value) {
         return $value * 2;
         };
-
         print_r(array_map($func, range(5, 9)));
+        
+        //array rand
+        $input = array("apple", "grape", "oranges", "bananas", "mellons");
+            $rand_keys = array_rand($input, 2);
+            echo $input[$rand_keys[0]] . "\n";
+            echo $input[$rand_keys[1]] . "\n"; 
+       //array push
+            $food = array("Pasta", "pizza","cheeseburgers");
+            array_push($food, "salad", "hotdog","soda");
+            print_r($food);
+      //in array
+            $cars = array("BMW", "Honda", "nissan", "chevy");
+            if (in_array("honda", $os)) {
+                echo "I drive a Honda";
+            }
+            if (in_array("nissa", $os)) {
+                echo "I drive a nissan";
+            }
         
         
         ?>
