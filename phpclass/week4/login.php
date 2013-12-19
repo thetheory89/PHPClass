@@ -66,11 +66,10 @@ and open the template in the editor.
                $_SESSION["isLoggedIn"] = true;
                header("Location:admin.php");
             } else {
-                /*
-                * should only show message if a post has been made
-                */
+               if (count($_GET)){
                 echo "<p>Username or password is not correct</p>";
-            }
+                         }
+                   }
         
         ?>
         <form name="mainform" action="login.php" method="post">
