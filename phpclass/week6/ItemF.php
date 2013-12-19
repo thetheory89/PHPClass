@@ -49,5 +49,12 @@ and open the template in the editor.
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         
         ?>
+        <form name="" type="" method="">
+            Address <input name="address" type="text" value=""><br/>
+            City<input name="city" type="text" value=""><br/>
+            Zip<input name="zip" type="text" value=""><br/>
+            State<input name="state" type="text" value=""><br/>
+            Name<input name="name" type="text" value="">
+        </form>
 </body>
 </html>
