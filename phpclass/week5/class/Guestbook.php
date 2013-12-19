@@ -11,7 +11,7 @@
  *
  * @author Rami
  */
-class Guestbook {
+class Guestbook extends DB{
     //put your code here
     public function getGuestbookData() {
         $result = array();
